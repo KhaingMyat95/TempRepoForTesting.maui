@@ -1,0 +1,30 @@
+﻿@page "/"
+@layout MainLayout
+
+<div>
+    <MudText Typo="Typo.h3">
+        @count
+    </MudText>
+    <MudButton OnClick="IncreaseCount" Variant="Variant.Filled" Color="Color.Primary">
+        Increase Count
+    </MudButton>
+    <MudButton OnClick="ResetCount" Variant="Variant.Filled" Color="Color.Primary">
+        Increase Count
+    </MudButton>
+    <MudButton OnClick='() => Navigation.NavigateTo("fetchdata")' Variant="Variant.Filled" Color="Color.Primary">
+        Got to Fatch Data page
+    </MudButton>
+</div>
+
+@code {
+    int count = 0;
+    private async Task IncreaseCount(){
+        count++;
+        StateHasChanged();
+    }
+
+    private async Task ResetCount(){
+        count = 0;
+        StateHasChanged();
+    }
+}
